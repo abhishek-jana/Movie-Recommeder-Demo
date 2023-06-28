@@ -220,7 +220,7 @@ class RecommendationPipeline:
             filtered_movies = df_concatenated.copy()
 
         # Sort the filtered movies by rank and select the top n_top movies
-        top_movies = filtered_movies["title"].head(n_top)
+        top_movies = filtered_movies["title"][:n_top]
         poster_url = self.fetch_poster_url(top_movies)
         avg_rating = self.get_avg_ratings(top_movies)
         return pd.DataFrame(
