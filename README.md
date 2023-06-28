@@ -2,6 +2,8 @@
 
 This is a movie recommendation system that suggests movies to users based on their preferences. The system utilizes various recommendation methods, including content-based filtering (most popular movies), collaborative filtering, and recommendation specific to existing users, to provide personalized movie recommendations.
 
+Most Popular Movies Based on Genre dosn't work properly due to isufficient data
+
 ## Features
 
 - **Movie search**: Users can search for specific movies and view detailed information about them, including ratings and reviews.
