@@ -14,5 +14,5 @@ tqdm
 plotly
 scikit-learn
 textwrap3
-# scikit-surprise
+scikit-surprise
 -e .
