@@ -260,15 +260,13 @@ class RecommendationPipeline:
         movies_list = self.movies_df.iloc[ind]["title"].tolist()
         movie_data = movie_data[movie_data["title"].isin(movies_list)]
 
-        poster_url = self.fetch_poster_url(movies_list)
-        # movie_data['poster_path'] = poster_url
+        poster_url = self.fetch_poster_url(movie_data["title"].tolist())
+        movie_data["poster_path"] = poster_url
         movie_data = movie_data.rename(
             columns={"weighted_rating": "rating", "title": "movie"}
         )
         movie_data["rating"] = movie_data["rating"].apply(lambda x: np.round(x, 2))
-        return movie_data[
-            ["movie", "rating"]
-        ]  # movie_data[['movie', 'poster_path', 'rating']]
+        return movie_data[["movie", "poster_path", "rating"]]
 
     def recommend_movie_neighbour(self, movie_name, n_top=10):
         # Get the index of the movie that matches the title

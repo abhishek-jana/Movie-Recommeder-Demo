@@ -298,6 +298,7 @@ if calculate_content_based:
     if st.button("Show Recommendation", key="2"):
         st.write(f"Here are the top 10 movies similar to {movie}")
         content_reco_df = make_reco.content_recommendations(movie)
+        st.write(content_reco_df)
         create_movie_layout_v2(data=content_reco_df, num_columns=5)
 
 st.header("Similar User Based Movie Recommendation")
